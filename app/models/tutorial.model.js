@@ -17,6 +17,7 @@ const insert = ({ title, description, published }, cb) => {
 };
 const findById = (id, cb) => {
   db.get("SELECT * FROM tutorials WHERE id = ?", [id], (err, row) => {
+    console.log(err, row);
     cb(err, row);
   });
 };
